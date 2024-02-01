@@ -15,19 +15,19 @@
 
         <div class="main-1">
             <!-- for email field -->
-            <label class="label" for="email">Email Text Field Validation</label><br>
-            <input class="input" type="email" name="email" id="email" placeholder="Enter email address"><br>
+            <label class="label" for="email">Email Text Field Validation<span style="color: red;">*</span></label><br>
+            <input class="input" type="email" oninput="emailInput.value = emailInput.value.toLowerCase();" name="email" id="email" placeholder="Enter email address"><br>
             <span class="validation" id="emailv"></span>
             <br><br>
 
             <!-- fro alpha field -->
-            <label class="label" for="alpha">Alpha Text Field Validation</label><br>
+            <label class="label" for="alpha">Alpha Text Field Validation<span style="color: red;">*</span></label><br>
             <input class="input" type="text" name="alphatext" id="alpha" placeholder="Enter alpha"><br>
             <span class="validation" id="alphav"></span>
             <br><br>
 
         <div class="rad">
-            <span class="spa">Radio Field Validation (Gender)</span><br>
+            <span class="spa">Radio Field Validation (Gender)<span style="color: red;">*</span></span><br>
 
             <input class="radio" type="radio" name="Gender" id="male">
             <label class="radio" for="male">Male</label><br>
@@ -38,20 +38,20 @@
         </div>
 
             <!-- url field -->
-            <label class="label" for="url">URL Field Validation</label><br>
+            <label class="label" for="url">URL Field Validation<span style="color: red;">*</span></label><br>
             <input class="input" type="text" name="url" id="url" placeholder="Enter url">
             <span class="validation" id="urlv"></span>
             <br><br>
 
             <!-- textarea field -->
 
-            <label class="label" for="textarea1">Textarea Field Validation</label><br>
+            <label class="label" for="textarea1">Textarea Field Validation<span style="color: red;">*</span> </label><br>
             <textarea name="textarea1" id="textarea1" cols="50" rows="5" placeholder="Textarea"></textarea><br>
             <span class="validation" id="textareav"></span>
             <br><br>
 
-            <label class="label" for="imagechoose">Image Field Validation</label><br>
-            <input type="file" name="image" id="imagechoose"><br>
+            <label class="label" for="imagechoose">Image Field Validation<span style="color: red;">*</span></label><br>
+            <input type="file" accept="image/*" name="image" id="imagechoose"><br>
             <span class="validation" id="imagev"></span>
             <br><br>
 
@@ -60,29 +60,29 @@
 
         <div class="main-2">
 
-            <label class="label" for="password">Password Text Field Validation</label><br>
+            <label class="label" for="password">Password Text Field Validation<span style="color: red;">*</span></label><br>
             <input class="input" type="password" name="password" id="password" placeholder="Enter password"><br>
             <button class="visible" id="tog-btn">VIEW</button>
             <span class="validation" id="passwordv"></span>
             <br><br>
 
-            <label class="label" for="countrycode phoneno">Phone Number Field Validation</label><br>
+            <label class="label" for="countrycode phoneno">Phone Number Field Validation<span style="color: red;">*</span></label><br>
             <select name="countrycode" id="countrycode">
                 <option value="+91">+91</option>
                 <option value="+93">+93</option>
                 <option value="+95">+95</option>
                 <option value="+92">+92</option>
             </select>
-            <input class="phone" type="text" name="phoneno" id="phoneno" placeholder="Enter Phone Number"><br>
+            <input class="phone" type="number" name="phoneno" id="phoneno" placeholder="Enter Phone Number" ><br>
             <span class="validation" id="phonenov"></span>
             <br><br>
 
-            <label class="label" for="dob">Date Picker (Birth date)</label><br>
+            <label class="label" for="dob">Date Picker (Birth date)<span style="color: red;">*</span></label><br>
             <input class="input" type="date" name="dob" id="dob" max="2024-02-01" min="1924-01-01"><br>
             <span class="validation" id="datev"></span>
             <br><br>
 
-            <label class="label" for="currency">Currency Field Validation</label><br>
+            <label class="label" for="currency">Currency Field Validation<span style="color: red;">*</span></label><br>
             <select name="curr" id="curr">
                 <option value="₹">₹</option>
                 <option value="¢">¢</option>
@@ -93,7 +93,7 @@
             <span class="validation" id="currencyv"></span>
             <br><br>
 
-            <span class="spa">Checkbox Field Validation</span><br>
+            <span class="spa">Checkbox Field Validation<span style="color: red;">*</span></span><br>
             <div class="checked">
                 <input type="checkbox" id="mean" name="mean">
                 <label for="mean">MEAN</label><br>
@@ -110,7 +110,7 @@
                 <br><br>
 
 
-                <label class="label" for="colourfield">Color Field Validation</label><br>
+                <label class="label" for="colourfield">Color Field Validation<span style="color: red;">*</span></label><br>
                 <input type="color" name="colourfield" id="colourfield" value="#000">
 
                 <button type="submit" class="submit" onclick="validationForm()">Submit</button>

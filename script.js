@@ -198,7 +198,7 @@ emailInput.addEventListener('input', function () {
     if (!emailValue) {
         emailValidation.textContent = 'Email is required';
         isValidEmail = false;
-    } else if (emailValue.length > 30 || !emailRegex.test(emailValue)) {
+    } else if (emailValue.length > 100 || !emailRegex.test(emailValue)) {
         emailValidation.textContent = 'Please enter a valid email with a maximum length of 30 characters and ending with .com or .in';
         isValidEmail = false;
     } else {

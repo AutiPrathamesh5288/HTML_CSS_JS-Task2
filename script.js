@@ -130,6 +130,7 @@ function validationForm() {
 
     else{
         clearform();
+        removeBorder();
         alert("Form is Submitted!");
     }
 }
@@ -166,7 +167,16 @@ function clearform() {
     checkboxBa.checked = false;
 
 }
-
+function removeBorder() {
+    emailInput.style.border='';
+    alphaInput.style.border='';
+    urlInput.style.border='';
+    textareaInput.style.border='';
+    passwordInput.style.border='';   
+    phoneInput.style.border=''; 
+    currencyInput.style.border=''; 
+    dateInput.style.border = '';
+}
 // For Button Hide/View
 const passInput = document.getElementById("password");
 const togglePassBtn = document.getElementById("tog-btn");
@@ -317,7 +327,8 @@ dateInput.setAttribute('min', minDateString);
 dateInput.setAttribute('max', maxDateString);
 
 dateInput.addEventListener('input', function () {
-    const enteredDate = new Date(dateInput.value.trim());  // Convert to Date object
+    const enteredDate = new Date(dateInput.value.trim()); 
+    dateInput.style.border = '2px solid red';
 
     if (!enteredDate) {
         dateValidation.textContent = 'Date is required';
@@ -325,11 +336,9 @@ dateInput.addEventListener('input', function () {
         dateValidation.textContent = 'Enter a valid date between ' + minDateString + ' and ' + maxDateString;
     } else {
         dateValidation.textContent = '';
+        dateInput.style.border = '2px solid #00FF00';
     }
 });
-
-
-
 
 
 currencyInput.addEventListener('input', function () {

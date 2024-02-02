@@ -13,7 +13,7 @@ const radioValidation = document.getElementById("genderv");
 
 const urlInput = document.getElementById("url");
 const urlValidation = document.getElementById("urlv");
-const urlRegex =/^(https?:\/\/(www\.)?)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,}){1,2}$/;
+const urlRegex = /^(https?:\/\/(www\.)?)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,}){1,2}(?:\/[^\s]*)?(?:\.com|\.in)?$/
 
 const textareaInput = document.getElementById("textarea1");
 const textareaValidation = document.getElementById("textareav");
@@ -165,9 +165,7 @@ function clearform() {
     checkboxReact.checked = false;
     checkboxBa.checked = false;
 
-
 }
-
 
 // For Button Hide/View
 const passInput = document.getElementById("password");
@@ -181,12 +179,11 @@ togglePassBtn.addEventListener("click", function () {
 
 
 
-
-
 let isValidEmail = false;
 
 emailInput.addEventListener('input', function () {
     let emailValue = emailInput.value.trim();
+    emailInput.style.border = '2px solid red';
 
     if (!emailValue) {
         emailValidation.textContent = 'Email is required';
@@ -196,7 +193,13 @@ emailInput.addEventListener('input', function () {
         isValidEmail = false;
     } else {
         emailValidation.textContent = '';
+        emailInput.style.border = '2px solid #00FF00';
         isValidEmail = true;
+    }
+
+    // Prevent typing beyond 30 characters
+    if (emailValue.length >= 30) {
+        emailInput.value = emailValue.slice(0, 30);
     }
 });
 
@@ -209,35 +212,44 @@ emailInput.addEventListener('input', function () {
 });
 
 
+
 alphaInput.addEventListener('input', function () {
     let alphaValue = alphaInput.value.trim();
+    alphaInput.style.border = '2px solid red';
 
     if (!alphaValue) {
         alphaValidation.textContent = 'Username is required';
-    } else if (!alphaRegex.test(alphaValue) || alphaValue.split(/\s+/).some(word => word.length < 3)) {
+    } else if ( !alphaRegex.test(alphaValue) || alphaValue.split(/\s+/).some(word => word.length < 3)) {
         alphaValidation.textContent = 'Please enter a valid username with each word starting with a capital letter and a minimum length of 3 characters';
     } else {
+        alphaInput.style.border = '2px solid #00FF00';
         alphaValidation.textContent = '';
     }
-});
-
-urlInput.addEventListener('input', function () {
-    let urlValue = urlInput.value.trim();
-
-    if (!urlValue) {
-        urlValidation.textContent = 'URL is required';
-    } else if (!urlRegex.test(urlValue)) {
-        urlValidation.textContent = 'Please enter a valid URL ending with .com or .in';
-    } else {
-        urlValidation.textContent = '';
+    if (alphaValue.length >= 30) {
+        alphaInput.value = alphaValue.slice(0, 30);
     }
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+
+    urlInput.addEventListener("input", function() {
+        const url = urlInput.value.trim();
+        urlInput.style.border = '2px solid red';
+
+        if (!url.match(urlRegex) || !url.endsWith(".com") && !url.endsWith(".in")) {
+            urlValidation.textContent = "Invalid URL format. It should end with .com or .in.";
+        } else {
+            urlValidation.textContent = "";
+            urlInput.style.border = '2px solid #00FF00';
+        }
+    });
+});
 
 
 textareaInput.addEventListener('input', function () {
     let textareaValue = textareaInput.value.trim();
+    textareaInput.style.border = '2px solid red';
 
     if (!textareaValue) {
         textareaValidation.textContent = 'Description is required';
@@ -245,12 +257,14 @@ textareaInput.addEventListener('input', function () {
         textareaValidation.textContent = 'Please enter a description between 10 and 100 characters';
     } else {
         textareaValidation.textContent = '';
+        textareaInput.style.border = '2px solid #00FF00';
     }
 });
 
 
 passwordInput.addEventListener('input', function () {
      passwordValue = passwordInput.value.trim();
+     passwordInput.style.border = '2px solid red';
 
     if (passwordValue.length < 8) {
         passwordValidation.textContent = 'Password must be at least 8 characters';
@@ -262,11 +276,13 @@ passwordInput.addEventListener('input', function () {
         passwordValidation.textContent = 'Please enter a valid password it conatains atleast one capital letter one Symbol';
     } else {
         passwordValidation.textContent = '';
+        passwordInput.style.border = '2px solid #00FF00';
     }
 });
 
 phoneInput.addEventListener('input', function () {
     let phoneValue = phoneInput.value.trim();
+    phoneInput.style.border = '2px solid red';
 
     if (!phoneValue) {
         phoneValidation.textContent = 'Phone number is required';
@@ -278,6 +294,7 @@ phoneInput.addEventListener('input', function () {
         phoneValidation.textContent = 'Please enter a valid phone number';
     } else {
         phoneValidation.textContent = '';
+        phoneInput.style.border = '2px solid #00FF00';
 
         
         if (phoneValue.length === 10) {
@@ -317,6 +334,7 @@ dateInput.addEventListener('input', function () {
 
 currencyInput.addEventListener('input', function () {
     let currencyValue = currencyInput.value.trim();
+    currencyInput.style.border = '2px solid red';
 
     if (!currencyValue) {
         currencyValidation.textContent = 'Currency is required';
@@ -334,6 +352,7 @@ currencyInput.addEventListener('input', function () {
                 currencyInput.value = currencyValue;  
             } else {
                 currencyValidation.textContent = '';
+                currencyInput.style.border = '2px solid #00FF00';
             }
         }
     }

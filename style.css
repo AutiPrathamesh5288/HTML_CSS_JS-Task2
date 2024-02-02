@@ -22,12 +22,16 @@
 }
 
 .input {
+  
   margin-top: 1%;
   width: 100%;
   height: 35px;
   padding-left: 1%;
   border: 2px solid grey;
   border-radius: 5px;
+}
+input:focus{
+  outline: none;
 }
 
 .label {
@@ -51,6 +55,9 @@
   border: 2px solid grey;
   border-radius: 5px;
 }
+#textarea1:focus{
+  outline: none;
+}
 
 #imagechoose {
   background-color: white;
@@ -73,7 +80,7 @@
   width: 15%;
 }
 .visible:hover{
-    background-color: rgb(253, 24, 24);
+    background-color: rgb(255, 0, 0);
     color: white;
 }
 
@@ -134,7 +141,7 @@ option {
 
 .submit:hover {
   background-color: rgb(1, 255, 39);
-  color: red;
+  color: lightblue;
 }
 
 .validation {

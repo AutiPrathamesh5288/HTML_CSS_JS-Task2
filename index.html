@@ -39,7 +39,7 @@
 
             <!-- url field -->
             <label class="label" for="url">URL Field Validation<span style="color: red;">*</span></label><br>
-            <input class="input" type="text" name="url" id="url" placeholder="Enter url">
+            <input class="input" type="text" oninput="urlInput.value = urlInput.value.toLowerCase();" name="url" id="url" placeholder="Enter url">
             <span class="validation" id="urlv"></span>
             <br><br>
 
@@ -114,8 +114,6 @@
                 <input type="color" name="colourfield" id="colourfield" value="#000">
 
                 <button type="submit" class="submit" onclick="validationForm()">Submit</button>
-
-            
 
         </div>
 

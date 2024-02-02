@@ -124,7 +124,7 @@ function validationForm() {
         !checkboxReact.checked &&
         !checkboxBa.checked
     ) {
-        checkboxValidation.textContent = "Please select atleast one";
+        checkboxValidation.textContent = "Please select atleast two";
     }
 }
 

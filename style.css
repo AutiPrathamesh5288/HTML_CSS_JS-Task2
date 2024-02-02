@@ -134,7 +134,7 @@ option {
 
 .submit:hover {
   background-color: rgb(1, 255, 39);
-  color: lightblue;
+  color: red;
 }
 
 .validation {

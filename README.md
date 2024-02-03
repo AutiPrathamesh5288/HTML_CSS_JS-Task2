@@ -1,7 +1,6 @@
 # Basic Login Form using HTML, CSS, JavaScript
+For small screens
 
-If  want to visit then click below
-https://workonloginform.netlify.app/
 <br>
 ### preview
 

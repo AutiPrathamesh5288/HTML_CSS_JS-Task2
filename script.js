@@ -129,7 +129,7 @@ function validationForm() {
 }
 
     else{
-        clearform();
+        clearform();zzz
         removeBorder();
         alert("Form is Submitted!");
     }
@@ -198,8 +198,8 @@ emailInput.addEventListener('input', function () {
     if (!emailValue) {
         emailValidation.textContent = 'Email is required';
         isValidEmail = false;
-    } else if (emailValue.length > 100 || !emailRegex.test(emailValue)) {
-        emailValidation.textContent = 'Please enter a valid email with a maximum length of 30 characters and ending with .com or .in';
+    } else if (emailValue.length > 64 || !emailRegex.test(emailValue)) {
+        emailValidation.textContent = 'Please enter a valid email with a maximum length of 64 characters and ending with .com or .in';
         isValidEmail = false;
     } else {
         emailValidation.textContent = '';

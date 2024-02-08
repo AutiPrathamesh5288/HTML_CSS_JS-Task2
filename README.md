@@ -1,7 +1,7 @@
 # Basic Login Form using HTML, CSS, JavaScript
+Not Responsive Currently working on it so please check only at desktop
+For small screens
 
-If  want to visit then click below
-https://workonloginform.netlify.app/
 <br>
 ### preview
 
